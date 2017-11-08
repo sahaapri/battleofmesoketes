@@ -12,10 +12,10 @@ namespace BOM.Logic
         private Dictionary<Side, int> lastSuccessfulAttackStrengthLookup = new Dictionary<Side, int>();
         public MisoketesWall()
         {
-            lastSuccessfulAttackStrengthLookup[Side.North] = 0;
-            lastSuccessfulAttackStrengthLookup[Side.East] = 0;
-            lastSuccessfulAttackStrengthLookup[Side.West] = 0;
-            lastSuccessfulAttackStrengthLookup[Side.South] = 0;
+            lastSuccessfulAttackStrengthLookup[Side.N] = 0;
+            lastSuccessfulAttackStrengthLookup[Side.E] = 0;
+            lastSuccessfulAttackStrengthLookup[Side.W] = 0;
+            lastSuccessfulAttackStrengthLookup[Side.S] = 0;
         }
         public void CheckAttacks(ref List<AttackDayRecords> attacks)
         {

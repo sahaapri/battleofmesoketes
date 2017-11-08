@@ -8,9 +8,9 @@ namespace BOM.Models
 {
     public enum Side
     {
-        North = 1,
-        South = 2,
-        East = 3,
-        West = 4
+        N = 1,
+        S = 2,
+        E = 3,
+        W = 4
     }
 }

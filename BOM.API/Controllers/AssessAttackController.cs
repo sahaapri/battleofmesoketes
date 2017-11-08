@@ -2,19 +2,58 @@
 using BOM.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace BOM.API.Controllers
 {
     public class AssessAttackController : ApiController
     {
-        public int Post(List<AttackDayRecords> attacks)
+        //public int Post(List<AttackDayRecords> attacks)
+        //{
+        //    AttackRecords attackRecords = new AttackRecords();
+        //    return attackRecords.GetSuccefulAttackCount(attacks);
+        //}
+        public int Post(string[] input)
         {
+            var attacks = new List<AttackDayRecords>();
+            Dictionary<string, Tribe> tribeCache = new Dictionary<string, Tribe>();
+            foreach (var item in input)
+            {
+                if (string.IsNullOrEmpty(item))
+                {
+                    throw new Exception("Attack details missing");
+                }
+                var data = item.Split(';');
+                if (data.Length != 2)
+                {
+                    throw new Exception("Something is not correct about the attacks.");
+                }
+                var day = data[0].Split(' ');
+                if (day.Length != 2)
+                {
+                    throw new Exception("Something is not correct about the attacks.");
+                }
+
+                var attack = new AttackDayRecords
+                {
+                    DayId = Convert.ToInt32(day[1])
+                };
+
+                var atts = data[1].Split(':');
+                foreach (var att in atts)
+                {
+                    var details = att.Split('-');
+                    if (details.Length != 3)
+                    {
+                        throw new Exception("Something is not correct about the attacks.");
+                    }
+                    attack.Attacks.Add(new AttackDetails { AttackingTribeName = details[0].Trim(), SideOfAttack = (Side)Enum.Parse(typeof(Side), details[1].Trim()), StrengthOfAttack = Convert.ToInt32(details[2].Trim()) });
+                }
+                attacks.Add(attack);
+            }
             AttackRecords attackRecords = new AttackRecords();
-            return attackRecords.GetSuccefulAttackCount(attacks);
+            var successfulAttacks = attackRecords.GetSuccefulAttackCount(attacks);
+            return successfulAttacks;
         }
     }
 }

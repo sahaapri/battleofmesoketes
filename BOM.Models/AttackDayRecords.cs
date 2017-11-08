@@ -10,6 +10,6 @@ namespace BOM.Models
     {
         public int DayId { get; set; }
         public DateTime Date { get; set; }
-        public List<AttackDetails> Attacks { get; set; }
+        public List<AttackDetails> Attacks { get; set; } = new List<AttackDetails>();
     }
 }

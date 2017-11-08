@@ -10,6 +10,7 @@ namespace BOM.Models
     {
         public Side SideOfAttack { get; set; }
         public Tribe AttackingTribe { get; set; }
+        public string AttackingTribeName { get; set; }
         public int StrengthOfAttack { get; set; }
         public bool IsSuccess { get; set; }
     }
