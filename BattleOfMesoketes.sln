@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOM.API.Tests", "BOM.API.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOM.Logic.Contracts", "BOM.Logic.Contracts\BOM.Logic.Contracts.csproj", "{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOM.DependencyResolver", "BOM.DependencyResolver\BOM.DependencyResolver.csproj", "{EDC908A2-AD09-4270-A7C5-4D3D6779A1BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC908A2-AD09-4270-A7C5-4D3D6779A1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC908A2-AD09-4270-A7C5-4D3D6779A1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC908A2-AD09-4270-A7C5-4D3D6779A1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC908A2-AD09-4270-A7C5-4D3D6779A1BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,9 @@ namespace BOM.Logic
 {
     public class MisoketesWall
     {
+        /// <summary>
+        /// look-up data for current state of walls
+        /// </summary>
         private Dictionary<Side, int> lastSuccessfulAttackStrengthLookup = new Dictionary<Side, int>();
         public MisoketesWall()
         {
@@ -17,6 +20,10 @@ namespace BOM.Logic
             lastSuccessfulAttackStrengthLookup[Side.W] = 0;
             lastSuccessfulAttackStrengthLookup[Side.S] = 0;
         }
+        /// <summary>
+        /// check and assess the attacks and figure out the successful ones
+        /// </summary>
+        /// <param name="attacks">list of attack details</param>
         public void CheckAttacks(ref List<AttackDayRecords> attacks)
         {
             try
@@ -50,6 +57,10 @@ namespace BOM.Logic
                 throw new Exception("Something is not correct about the attacks.");
             }
         }
+        /// <summary>
+        /// raises the walls to the new required height
+        /// </summary>
+        /// <param name="dayWiseSideMaxAttack">the new height for each wall for a particular day</param>
         private void RaiseWalls(Dictionary<Side, int> dayWiseSideMaxAttack)
         {
             foreach (Side side in dayWiseSideMaxAttack.Keys)

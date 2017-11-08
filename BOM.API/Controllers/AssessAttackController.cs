@@ -1,4 +1,5 @@
-﻿using BOM.Logic;
+﻿using BOM.DependencyResolver;
+using BOM.Logic;
 using BOM.Logic.Contracts;
 using BOM.Models;
 using System;
@@ -10,11 +11,14 @@ namespace BOM.API.Controllers
     public class AssessAttackController : ApiController
     {
         private IAttackRecords _attackRecords;
+        /// <summary>
+        /// property for calling logic layer(using DI)
+        /// </summary>
         public IAttackRecords AttackRecords
         {
             get
             {
-                return _attackRecords ?? new AttackRecords();
+                return _attackRecords ?? ResolveDependency.Resolve<IAttackRecords>();
             }
             set
             {
@@ -26,13 +30,24 @@ namespace BOM.API.Controllers
         //    AttackRecords attackRecords = new AttackRecords();
         //    return attackRecords.GetSuccefulAttackCount(attacks);
         //}
+
+
+        /// <summary>
+        /// To Submit the Attacks for assessing and getting the count of successful attacks
+        /// </summary>
+        /// <param name="input">array of details of attacks</param>
+        /// <returns>count of successful attacks</returns>
         public int Post(string[] input)
         {
             var attacks = ConvertData(input);
             var successfulAttacks = AttackRecords.GetSuccefulAttackCount(attacks);
             return successfulAttacks;
         }
-
+        /// <summary>
+        /// function responsible for converting the array of strings into relevant business objects
+        /// </summary>
+        /// <param name="input">details of the attacks in form of string array</param>
+        /// <returns>relevant attacks details in business object</returns>
         private List<AttackDayRecords> ConvertData(string[] input)
         {
             var attacks = new List<AttackDayRecords>();
