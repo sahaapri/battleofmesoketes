@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOM.API", "BOM.API\BOM.API.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOM.API.Tests", "BOM.API.Tests\BOM.API.Tests.csproj", "{A1C20DF3-2167-48C4-A4EB-8F85F1BCFC49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOM.Logic.Contracts", "BOM.Logic.Contracts\BOM.Logic.Contracts.csproj", "{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A1C20DF3-2167-48C4-A4EB-8F85F1BCFC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C20DF3-2167-48C4-A4EB-8F85F1BCFC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1C20DF3-2167-48C4-A4EB-8F85F1BCFC49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using BOM.Logic;
+using BOM.Logic.Contracts;
 using BOM.Models;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,18 @@ namespace BOM.API.Controllers
 {
     public class AssessAttackController : ApiController
     {
+        private IAttackRecords _attackRecords;
+        public IAttackRecords AttackRecords
+        {
+            get
+            {
+                return _attackRecords ?? new AttackRecords();
+            }
+            set
+            {
+                _attackRecords = value;
+            }
+        }
         //public int Post(List<AttackDayRecords> attacks)
         //{
         //    AttackRecords attackRecords = new AttackRecords();
@@ -15,8 +28,14 @@ namespace BOM.API.Controllers
         //}
         public int Post(string[] input)
         {
+            var attacks = ConvertData(input);
+            var successfulAttacks = AttackRecords.GetSuccefulAttackCount(attacks);
+            return successfulAttacks;
+        }
+
+        private List<AttackDayRecords> ConvertData(string[] input)
+        {
             var attacks = new List<AttackDayRecords>();
-            Dictionary<string, Tribe> tribeCache = new Dictionary<string, Tribe>();
             foreach (var item in input)
             {
                 if (string.IsNullOrEmpty(item))
@@ -51,9 +70,7 @@ namespace BOM.API.Controllers
                 }
                 attacks.Add(attack);
             }
-            AttackRecords attackRecords = new AttackRecords();
-            var successfulAttacks = attackRecords.GetSuccefulAttackCount(attacks);
-            return successfulAttacks;
+            return attacks;
         }
     }
 }

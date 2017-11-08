@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E666035-A452-403F-9C24-B8E63EDFA536}</ProjectGuid>
+    <ProjectGuid>{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BOM.Logic</RootNamespace>
-    <AssemblyName>BOM.Logic</AssemblyName>
+    <RootNamespace>BOM.Logic.Contracts</RootNamespace>
+    <AssemblyName>BOM.Logic.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,20 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MisoketesWall.cs" />
-    <Compile Include="AttackRecords.cs" />
+    <Compile Include="IAttackRecords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BOM.Logic.Contracts\BOM.Logic.Contracts.csproj">
-      <Project>{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}</Project>
-      <Name>BOM.Logic.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BOM.Models\BOM.Models.csproj">
-      <Project>{c5019229-f764-44f4-a782-45570a0343d4}</Project>
+      <Project>{C5019229-F764-44F4-A782-45570A0343D4}</Project>
       <Name>BOM.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

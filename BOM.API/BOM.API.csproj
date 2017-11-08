@@ -255,6 +255,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BOM.Logic.Contracts\BOM.Logic.Contracts.csproj">
+      <Project>{2EA92CDF-ABB7-4548-8B4A-E87CAD2CB9BD}</Project>
+      <Name>BOM.Logic.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BOM.Logic\BOM.Logic.csproj">
       <Project>{6e666035-a452-403f-9c24-b8e63edfa536}</Project>
       <Name>BOM.Logic</Name>

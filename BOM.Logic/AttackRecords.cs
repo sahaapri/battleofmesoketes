@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BOM.Models;
+using BOM.Logic.Contracts;
 
 namespace BOM.Logic
 {
-    public class AttackRecords
+    public class AttackRecords : IAttackRecords
     {
         private MisoketesWall _assessAttacks;
         public MisoketesWall _AssessAttacks
